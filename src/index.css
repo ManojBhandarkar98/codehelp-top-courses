@@ -16,3 +16,11 @@
         transform: rotate(1turn);
     }
 }
+
+.navbar {
+    --tw-bg-opacity: 1;
+    background-color: rgb(74 78 105/var(--tw-bg-opacity));
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    color: white;
+}
