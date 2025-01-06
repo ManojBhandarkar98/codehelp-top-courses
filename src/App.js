@@ -27,7 +27,7 @@ const App = () => {
     <div>
       <Navbar />
       <Filter filterData={filterData} />
-      <Cards apiUrl={apiUrl} />
+      <Cards apiUrl={courses} />
     </div>
   );
 };
