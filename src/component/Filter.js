@@ -3,12 +3,10 @@ const Filter = ({ filterData }) => {
         <div className="filter-bar">
             {
                 filterData.map((data) => {
-                    <button key={data.id}>
-                        {data.title};
-                    </button>
+                    return ( <button key={data.id} > {data.title} </button> );
                 })
             }
-        </div>
+        </div >
     );
 }
 export default Filter;
