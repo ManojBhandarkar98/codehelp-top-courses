@@ -1,6 +1,7 @@
 import Card from "./Card";
 
 const Cards = ({ courses }) => {
+    console.log(courses);
     let allCourses = [];
     //all courses data in one array
     const getAllCourses = () => {
@@ -11,11 +12,11 @@ const Cards = ({ courses }) => {
         });
         return allCourses;
     }
-    return (
+    return ( 
         <div>
             {
-                allCourses.map((course) => {
-                    <Card course={course}/>
+                getAllCourses().map((course) => {
+                   return <Card key={course.id} course={course}/>
                 })
             }
         </div>
