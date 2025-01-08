@@ -4,25 +4,29 @@ import Navbar from "./components/Navbar";
 import Filter from "./components/Filter";
 import Cards from "./components/Cards";
 import { useEffect, useState } from "react";
+import Spinner from "./components/Spinner";
 
 const App = () => {
 
   const [courses, setCourses] = useState(null);
-  
+  const [loading, setLoading] = useState(true)
+
   async function fetchData() {
+    setLoading(true);
     try {
       let response = await fetch(apiUrl);
       let output = response.json();
       setCourses(output);
-      
+
     }
     catch (error) {
       toast.error("Network error")
     }
+    setLoading(false);
   }
-  useEffect(()=>{
+  useEffect(() => {
     fetchData();
-  },[])
+  }, [])
   console.log(courses);
   return (
     <div>
@@ -33,7 +37,10 @@ const App = () => {
         <Filter filterData={filterData} />
       </div>
       <div>
-        <Cards />
+        {
+          loading ? <Spinner /> : <Cards />
+        }
+
       </div>
 
     </div>
