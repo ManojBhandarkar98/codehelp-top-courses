@@ -8,7 +8,7 @@ import Spinner from "./components/Spinner";
 
 const App = () => {
 
-  const [courses, setCourses] = useState(null);
+  const [courses, setCourses] = useState({});
   const [loading, setLoading] = useState(true)
 
   async function fetchData() {
@@ -16,7 +16,8 @@ const App = () => {
     try {
       let response = await fetch(apiUrl);
       let output = response.json();
-      setCourses(output.data);
+     
+      setCourses(output);
 
     }
     catch (error) {
@@ -28,6 +29,7 @@ const App = () => {
     fetchData();
   }, [])
 
+ 
   return (
     <div>
       <div>
