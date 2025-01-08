@@ -16,7 +16,7 @@ const App = () => {
     try {
       let response = await fetch(apiUrl);
       let output = response.json();
-      setCourses(output);
+      setCourses(output.data);
 
     }
     catch (error) {
@@ -27,7 +27,7 @@ const App = () => {
   useEffect(() => {
     fetchData();
   }, [])
-  console.log(courses);
+
   return (
     <div>
       <div>
@@ -38,7 +38,7 @@ const App = () => {
       </div>
       <div>
         {
-          loading ? <Spinner /> : <Cards />
+          loading ? <Spinner /> : <Cards courses={courses} />
         }
 
       </div>
