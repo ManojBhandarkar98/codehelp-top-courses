@@ -2,9 +2,9 @@ import React from 'react'
 
 function Spinner() {
     return (
-        <div>
+        <div className="flex flex-col items-center space-y-2">
             <div className='spinner'>
-                <div>Loading...</div>
+                <div className="text-bgDark text-lg font-semibold">Loading...</div>
             </div>
         </div>
     )
