@@ -15,9 +15,9 @@ const App = () => {
     setLoading(true);
     try {
       let response = await fetch(apiUrl);
-      let output = response.json();
+      let output = await response.json();
      
-      setCourses(output);
+      setCourses(output.data);
 
     }
     catch (error) {
